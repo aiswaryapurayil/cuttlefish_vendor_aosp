@@ -1,0 +1,10 @@
+<compatibility-matrix version="1.0" type="framework">
+    <hal format="aidl" optional="true">
+        <name>vendor.hardware.carsenze</name>
+        <version>1</version>
+        <interface>
+            <name>ICarsenze</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+</compatibility-matrix>

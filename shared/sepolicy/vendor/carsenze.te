@@ -1,0 +1,19 @@
+# Carsenze app domain
+type carsenze, domain;
+app_domain(carsenze)
+gpu_access(carsenze)
+ 
+# Use system services exposed as part of Android framework public API
+allow carsenze app_api_service:service_manager find;
+ 
+# Read and write /data/data subdirectory (for its app-private persistent data)
+allow carsenze app_data_file:dir create_dir_perms;
+allow carsenze app_data_file:{ file lnk_file } create_file_perms;
+ 
+# Find the carsenze service interface in the Service Manager
+allow carsenze carsenze_service:service_manager find;
+ 
+# Send direct binder calls to the Carsenze HAL service
+allow carsenze hal_carsenze_default:binder call;
+
+allow platform_app system_data_file:dir search;
